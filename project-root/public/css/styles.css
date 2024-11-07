@@ -1,0 +1,152 @@
+/* Definir las fuentes globales */
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+/* Estilo para la barra de navegación */
+/* styles.css */
+header {
+    position: fixed; /* Mantiene la barra en la parte superior siempre */
+    top: 0; /* Ubicación en la parte superior */
+    left: 0; /* Sin margen izquierdo */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+    background-color: white; /* Color de fondo para la barra de navegación */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para darle visibilidad */
+}
+
+/* Espaciado adicional para el contenido de la página */
+body {
+    font-family: var(--default-font);
+}
+
+
+
+/* Ajustes del logo */
+.navbar-brand img {
+    max-width: 120px; /* Tamaño máximo ajustado */
+}
+
+/* Aplicar la fuente Poppins a la barra de navegación */
+.navbar-nav .nav-link {
+    font-family: var(--nav-font);
+    font-size: 1.05rem; /* Tamaño de fuente ligeramente aumentado */
+    font-weight: 500; /* Ajuste del peso de la fuente */
+    padding: 0 15px;  /* Ajuste del padding */
+    color: #000; /* Color de texto por defecto */
+    margin-right: 20px; /* Agregar espacio entre los elementos del menú */
+}
+
+/* Estilo para el enlace activo en la barra de navegación */
+.navbar-nav .nav-link.active {
+    color: #E29578; /* Color para la opción activa */
+}
+
+/* Cambiar color al pasar el ratón */
+.navbar-nav .nav-link:hover {
+    color: #E29578; /* Color al hacer hover */
+}
+
+/* Aplicar la fuente de los encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+/* Botones de sesión */
+.btn {
+    font-size: 1rem; /* Tamaño moderado */
+    padding: 8px 16px; /* Ajuste moderado del padding */
+}
+
+/* Ajustes del botón de REGISTRAR */
+.btn-primary {
+    background-color: #E29578; /* Color del botón REGISTRAR */
+    border-color: #E29578;
+}
+
+/* Cambiar el color del botón REGISTRAR al hacer hover */
+.btn-primary:hover {
+    background-color: rgb(238, 90, 90); /* Color de hover del botón */
+    border-color: rgb(238, 90, 90);
+}
+
+/* Ajustes para botones de sesión */
+.navbar-text,
+.btn-outline-danger,
+.btn-outline-primary {
+    margin-left: 15px;
+}
+
+/* Ajuste específico de la fuente en los botones */
+.btn-outline-primary, .btn-outline-danger, .btn-primary {
+    font-family: var(--nav-font);
+}
+
+/* Alineación de los iconos de carrito y usuario en el menú */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre iconos y texto */
+}
+
+/* Estilo personalizado para el botón de Iniciar Sesión */
+.custom-login-btn {
+    color: #ffffff; /* Color del texto */
+    background-color: #006d77; /* Color de fondo */
+    border-color: #006d77; /* Color del borde */
+}
+
+/* Color del botón cuando se pasa el mouse (hover) */
+.custom-login-btn:hover {
+    color: #ffffff; /* Color del texto en hover */
+    background-color: #005f6b; /* Color de fondo más oscuro en hover */
+    border-color: #005f6b; /* Color del borde en hover */
+}
+.carousel-caption {
+    position: absolute; /* Posición absoluta para superponer */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Alinear al centro */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejor legibilidad */
+}
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.footer {
+    padding: 40px 0;
+    background-color: #000000 !important; /* Color de fondo oscuro */
+}
+
+.footer h5 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #E29578; /* Cambia el color del texto del título */
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer .social-icons a {
+    margin-right: 10px;
+    font-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+.footer .list-unstyled li {
+    margin: 10px 0;
+}
+
+.footer .input-group {
+    margin-top: 20px;
+}
+
+
+.footer .text-center {
+    margin-top: 20px;
+}
