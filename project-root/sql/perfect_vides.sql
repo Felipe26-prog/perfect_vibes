@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2024 a las 19:09:30
+-- Tiempo de generación: 07-11-2024 a las 14:46:11
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -32,13 +32,6 @@ CREATE TABLE `carrito` (
   `producto_id` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `carrito`
---
-
-INSERT INTO `carrito` (`id`, `producto_id`, `cantidad`) VALUES
-(1, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -100,7 +93,7 @@ CREATE TABLE `mensajes` (
 --
 
 INSERT INTO `mensajes` (`id`, `nombre`, `email`, `mensaje`, `fecha`, `estado`) VALUES
-(1, 'Krol valentina', 'Karolvalentina@gmail.com', 'Me parece buena su pagina los felicito', '2024-11-01 16:58:48', 'leido');
+(1, 'Krol valentina', 'Karolvalentina@gmail.com', 'Me parece buena su pagina los felicito', '2024-11-01 16:58:48', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -137,7 +130,15 @@ INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `usu
 (44, 'Pestañina Essence Call Me Queen False Lash 11.5ml', 'Looks llamativos y pestañas que sorprenden con su volumen.', 21500.00, 'Pestañina Essence Call Me Queen False Lash 11.5ml.webp', NULL, NULL),
 (45, 'Iluminador Max Factor Facefinity Golden Hour 8gr', 'Iluminador ultra-ligero para un acabado profesional. Acabado difuminado que camufla los poros. Permite que la piel respire. Para lucir una piel perfecta y natural durante todo el año y tener un brillo saludable y radiante durante todo el día.', 62500.00, 'Iluminador Max Factor Facefinity Golden Hour 8gr.webp', NULL, NULL),
 (46, 'Delineador Catrice Ojos Kohl Kajal Waterproof Tono 110 0.78gr', 'Para un toque de color resistente al agua e impresionante.', 13000.00, 'Delineador Catrice Ojos Kohl Kajal Waterproof Tono 110 0.78gr.webp', NULL, NULL),
-(47, 'Cetaphil Crema Hidratante X 453 GCetaphil Crema Hidratante X 453 G', 'Emulsión facial que hidrata mientras protege de los rayos solares. Ayuda a prevenir los signos del envejecimiento prematuro por el sol.', 130000.00, 'Cetaphil Crema Hidratante X 453 G.webp', NULL, NULL);
+(47, 'Cetaphil Crema Hidratante X 453 GCetaphil Crema Hidratante X 453 G', 'Emulsión facial que hidrata mientras protege de los rayos solares. Ayuda a prevenir los signos del envejecimiento prematuro por el sol.', 130000.00, 'Cetaphil Crema Hidratante X 453 G.webp', NULL, NULL),
+(48, 'SOMBRA COSMOS TRENDY', 'El iluminador tiene un propósito en cada uno de los looks que quieres lograr y es elevar tu rostro.', 20000.00, 'SOMBRA COSMOS TRENDY.webp', NULL, NULL),
+(49, 'Base Líquida ', 'Mezcla líquida y pigmentada que varía en acabado y niveles de cobertura para disimular las imperfecciones y dejar la piel con un aspecto uniforme', 15000.00, 'Base Líquida .jpeg', NULL, NULL),
+(50, 'Xihbxyly Flash Deals Rubor Líquido Mate Claro Borde Natural', 'Crema suave y liviana que se puede mezclar y altamente pigmentada para un color de aspecto natural y un brillo duradero. Un rubor de belleza poco común, no quita el maquillaje, resistente al sudor y no pegajoso, puede durar efectivamente todo el día sin preocuparse por las imperfecciones del maquillaje.', 25000.00, 'Xihbxyly Flash Deals Liquid Blush Matte Clear Natural Border.webp', NULL, NULL),
+(51, 'ESMALTE VOGUE EFECTO GEL ARMONIA BEIGE', 'ESMALTE VOGUE EFECTO GEL ARMONIA BEIGE', 11000.00, 'ESMALTE VOGUE EFECTO GEL ARMONIA BEIGE.png', NULL, NULL),
+(52, 'Delineador Cat Line Doble Punta', '¡Descubre el Delineador Cat Line Doble Punta y lleva tu delineado al siguiente nivel! Este innovador delineador cuenta con dos puntas, brindándote la versatilidad que necesitas para crear trazos precisos y una cola de gato perfecta.', 15000.00, '5011DelineadorCatLine_1.webp', NULL, NULL),
+(53, 'Máscara Efecto Pestañas De Muñeca', 'Disfruta de pestañas más grandes, grandes, grandes con cada pasada y la máscara Efecto Pestañas de Muñeca gracias a su mega cepillo, Su fórmula a prueba de agua y con aloe vera', 25000.00, 'Máscara Efecto Pestañas De Muñeca.png', NULL, NULL),
+(54, 'Esmalte Vogue Efecto Gel Determinación', 'Esmalte Vogue Efecto Gel Determinación', 9500.00, 'Esmalte Vogue Efecto Gel Determinación.jpg', NULL, NULL),
+(55, 'Dulzura', 'Esmalte Efecto Gel, hasta 10 días de duración con Biotina y Argán en 2 pasos, Paso 1: Color y Paso 2: Brillo, a un precio increíble.', 10500.00, 'Dulzura.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -227,9 +228,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `telefono`, `contraseña`, `fecha_registro`, `role`) VALUES
-(6, 'Admin Felipe', 'felipemuhalo@gmail.com', '3138556776', '$2y$10$xqhPwO03nvIwryygwbN9zOvhX527bjIi031yCqA0.jhC5ScNfwm16', '2024-10-16 07:15:07', 'admin'),
-(7, 'Karen Rojas', 'karendayanarojbel6@gmail.com', '3209864428', '$2y$10$SwrD03pfo0qPioPhesvlVOOb3hHWtkO68n.8Q/T0nIOYCObLdX4/q', '2024-10-22 05:26:22', 'cliente'),
-(8, 'admin', 'admin@gmail.com', '3212343673', '$2y$10$qJ9SR8gdiO1s5RtQKuJ9KuirSfNrekoYj/mLrcsg98hwVwiNAV7lO', '2024-10-30 00:59:53', 'admin');
+(6, 'Admin Felipe', 'felipemuhalo@gmail.com', '3138556776', '$2y$10$xqhPwO03nvIwryygwbN9zOvhX527bjIi031yCqA0.jhC5ScNfwm16', '2024-10-16 07:15:07', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -328,7 +327,7 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `recuperacion_contraseña`
@@ -346,7 +345,7 @@ ALTER TABLE `servicios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
