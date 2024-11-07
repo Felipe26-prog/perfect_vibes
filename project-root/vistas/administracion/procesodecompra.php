@@ -210,7 +210,7 @@ foreach ($_SESSION['cart'] as $item) {
         
         // Redirigir a la página principal después de 3 segundos
         setTimeout(function() {
-            window.location.href = '/project-root/vistas/usuarios/index.php';
+            window.location.href = '/project-root/public/index.php';
         }, 3000); // 3000 ms = 3 segundos
     });
 </script>
