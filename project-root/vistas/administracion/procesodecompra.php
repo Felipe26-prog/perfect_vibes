@@ -26,101 +26,74 @@ foreach ($_SESSION['cart'] as $item) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* El mismo estilo anterior */
         body {
-            background-color: #EDF6F9; /* Color de fondo */
-            font-family: 'Roboto', sans-serif; /* Fuente utilizada */
-            overflow-x: hidden; /* Evitar scroll horizontal */
+            background-color: #EDF6F9;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
         }
         .container {
-            background-color: #FFFFFF; /* Color de fondo de la sección */
-            padding: 40px; /* Espaciado interno */
-            border-radius: 20px; /* Bordes redondeados */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra */
-            margin-top: 50px; /* Margen superior */
-            animation: fadeIn 0.5s ease-in-out; /* Animación de aparición */
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            animation: fadeIn 0.5s ease-in-out;
         }
         @keyframes fadeIn {
-            from { opacity: 0; } /* Comienza invisible */
-            to { opacity: 1; } /* Termina visible */
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         h2 {
-            color: #006D77; /* Color del título */
-            margin-bottom: 30px; /* Margen inferior */
-            text-align: center; /* Centrar texto */
-            font-weight: bold; /* Negrita */
+            color: #006D77;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
         }
         label {
-            color: #006D77; /* Color de las etiquetas */
-            font-weight: 500; /* Peso de la fuente */
+            color: #006D77;
+            font-weight: 500;
         }
         .btn-primary {
-            background-color: #E29578; /* Color de fondo del botón */
-            border: none; /* Sin borde */
-            transition: background-color 0.3s, transform 0.3s; /* Transición suave */
-            border-radius: 25px; /* Bordes redondeados */
+            background-color: #E29578;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 25px;
         }
         .btn-primary:hover {
-            background-color: #FFDDD2; /* Color al pasar el mouse */
-            transform: translateY(-2px); /* Efecto de levantamiento */
-        }
-        .btn-secondary {
-            background-color: #006D77; /* Color de fondo del botón secundario */
-            border: none;
-            border-radius: 25px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .btn-secondary:hover {
-            background-color: #004D52;
+            background-color: #FFDDD2;
             transform: translateY(-2px);
         }
         .form-section {
-            margin-bottom: 30px; /* Margen inferior */
-            border: 1px solid #83C5BE; /* Borde */
-            border-radius: 10px; /* Bordes redondeados */
-            padding: 20px; /* Espaciado interno */
-            background-color: #FFFFFF; /* Color de fondo */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            margin-bottom: 30px;
+            border: 1px solid #83C5BE;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .total {
-            font-weight: bold; /* Negrita */
-            font-size: 1.5em; /* Tamaño de fuente */
-            margin-top: 20px; /* Margen superior */
-            text-align: center; /* Centrar texto */
-            color: #006D77; /* Color del total */
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+            color: #006D77;
         }
         .form-control {
-            border-radius: 20px; /* Bordes redondeados */
-            border: 1px solid #83C5BE; /* Borde */
-            transition: border 0.3s; /* Transición al enfocar */
+            border-radius: 20px;
+            border: 1px solid #83C5BE;
+            transition: border 0.3s;
         }
         .form-control:focus {
-            box-shadow: 0 0 5px rgba(0, 109, 119, 0.5); /* Sombra al enfocar */
-            border-color: #006D77; /* Color del borde al enfocar */
+            box-shadow: 0 0 5px rgba(0, 109, 119, 0.5);
+            border-color: #006D77;
         }
-        .product-card {
-            border-radius: 10px; /* Bordes redondeados */
-            background-color: #FFDDD2; /* Color de fondo */
-            margin-top: 20px; /* Margen superior */
-            transition: transform 0.2s; /* Transición al pasar el mouse */
-        }
-        .product-card:hover {
-            transform: scale(1.03); /* Escalar al pasar el mouse */
-        }
-        .card-header {
-            background-color: #006D77; /* Color de fondo del encabezado */
-            color: white; /* Color del texto */
-            font-weight: bold; /* Negrita */
-            border-top-left-radius: 10px; /* Bordes redondeados */
-            border-top-right-radius: 10px; /* Bordes redondeados */
-        }
-        .card-body {
-            background-color: #FFF; /* Color de fondo */
-            padding: 15px; /* Espaciado interno */
-        }
-        #qr_code {
-            display: none; /* Ocultar por defecto */
-            text-align: center; /* Centrar texto */
-            margin-top: 20px; /* Margen superior */
+        #message {
+            display: none;
+            text-align: center;
+            color: green;
+            font-size: 1.5em;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -129,7 +102,7 @@ foreach ($_SESSION['cart'] as $item) {
 <div class="container">
     <h2>Formulario de Proceso de Compra</h2>
     
-    <form id="orderForm" action="confirmar_compra.php" method="POST" onsubmit="return showSuccessMessage()">
+    <form id="orderForm" method="POST">
         <div class="form-section">
             <h4>Información Personal</h4>
             <div class="form-group">
@@ -188,38 +161,36 @@ foreach ($_SESSION['cart'] as $item) {
                 </div>
                 <div class="form-group">
                     <label for="cvv">CVV:</label>
-                    <input type="text" class="form-control" id="cvv" name="cvv" placeholder="XXX" required>
+                    <input type="text" class="form-control" id="cvv" name="cvv" required>
                 </div>
             </div>
         </div>
 
         <div class="total">
-            <p>Total a pagar: $<?php echo number_format($total, 2); ?></p>
+            <p>Total: $<span id="totalAmount">0</span></p>
         </div>
 
         <div class="form-group text-center">
             <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
         </div>
-        
-        <div class="form-group text-center">
-            <a href="/project-root/public/productos.php" class="btn btn-secondary">Volver al Menú Principal</a>
-        </div>
     </form>
+
+    <div id="message">¡Pedido exitoso! Serás redirigido a la página de inicio.</div>
 </div>
 
 <script>
-    // Función para mostrar los campos de identificación dependiendo del tipo seleccionado
+    // Función para mostrar los campos de identificación según el tipo
     function toggleIdField() {
-        var tipoIdentificacion = document.getElementById('tipo_identificacion').value;
+        var tipoId = document.getElementById('tipo_identificacion').value;
         var idField = document.getElementById('id_field');
-        if (tipoIdentificacion === 'cedula' || tipoIdentificacion === 'extranjeria') {
-            idField.style.display = 'block';
-        } else {
+        if (tipoId === 'extranjeria') {
             idField.style.display = 'none';
+        } else {
+            idField.style.display = 'block';
         }
     }
 
-    // Función para mostrar los campos de tarjeta dependiendo del método de pago seleccionado
+    // Función para mostrar los campos de tarjeta según el método de pago
     function togglePaymentFields() {
         var metodoPago = document.getElementById('metodo_pago').value;
         var tarjetaFields = document.getElementById('tarjeta_fields');
@@ -229,13 +200,21 @@ foreach ($_SESSION['cart'] as $item) {
             tarjetaFields.style.display = 'none';
         }
     }
-    
-    // Función para mostrar un mensaje de éxito al enviar el formulario
-    function showSuccessMessage() {
-        alert("¡Gracias por tu compra! Recibirás un correo de confirmación.");
-        return true;
-    }
+
+    // Prevenir el envío del formulario y mostrar el mensaje de éxito
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevenir la acción por defecto del formulario
+        
+        // Mostrar el mensaje de éxito
+        document.getElementById('message').style.display = 'block';
+        
+        // Redirigir a la página principal después de 3 segundos
+        setTimeout(function() {
+            window.location.href = '/project-root/vistas/usuarios/index.php';
+        }, 3000); // 3000 ms = 3 segundos
+    });
 </script>
 
 </body>
 </html>
+

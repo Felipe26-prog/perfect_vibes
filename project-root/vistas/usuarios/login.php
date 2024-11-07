@@ -2,6 +2,11 @@
 $titulo = "Inicio de Sesión";
 include __DIR__ . '/../plantillas/header.php';
 
+// Iniciar la sesión si no está iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Variables para almacenar mensajes de error
 $error = "";
 
